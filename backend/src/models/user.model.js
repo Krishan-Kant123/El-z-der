@@ -1,13 +1,54 @@
-import mongoose,{ Schema } from 'mongoose';
+// import mongoose,{ Schema } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+// const userSchema = new mongoose.Schema({
+//     username: {
+//         type: String,
+//         required: true,
+//         unique: true,
+//     },
+//     name:{
+//         type:String,
+//         required: true
+//     },
+//     password: {
+//         type: String,
+//         required: true,
+//     },
+//     alerts: {
+//         type: Object,
+//         notification :{
+//             type: String,
+//             date: Date
+//         },
+//         priority:{
+//             type: Number,
+//             default: 0
+//         }
+//     },
+//     contactsEmergency: { 
+//         type: Array,
+//         contactName: String,
+//         contactNumber: String
+//     }
+// },{
+//     timestamps: true
+// });
+
+// const User = mongoose.model('User', userSchema);
+// module.exports = User;
+
+
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const userSchema = new Schema({
     username: {
         type: String,
         required: true,
         unique: true,
     },
-    name:{
-        type:String,
+    name: {
+        type: String,
         required: true
     },
     password: {
@@ -16,21 +57,21 @@ const userSchema = new mongoose.Schema({
     },
     alerts: {
         type: Object,
-        notification :{
+        notification: {
             type: String,
             date: Date
         },
-        priority:{
+        priority: {
             type: Number,
             default: 0
         }
     },
-    contactsEmergency: { 
+    contactsEmergency: {
         type: Array,
         contactName: String,
         contactNumber: String
     }
-},{
+}, {
     timestamps: true
 });
 
